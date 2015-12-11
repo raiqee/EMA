@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="15.025163">
+<testcase classname="Archive Action" name="Cycle textbox will be enabled once year has been selected from the dropdown." time="15.025163">
+<system-out><![CDATA[Given Log in as EMA Admin User..............................................passed
+When Click Archive Tab......................................................passed
+Then Page Should Redirect to Archive Page...................................passed
+When Select from Year Dropdown..............................................passed
+Then Cycle Textbox should be enable/editable................................passed
+Then Exit Browser...........................................................passed
+]]></system-out>
+</testcase>
+</testsuite>

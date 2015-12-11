@@ -1,0 +1,100 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 44,
+        "name": "Cycle textbox will be enabled once year has been selected from the dropdown.",
+        "description": "",
+        "id": "archive-action;cycle-textbox-will-be-enabled-once-year-has-been-selected-from-the-dropdown.",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 10467479638,
+              "status": "passed"
+            },
+            "line": 45,
+            "name": "Log in as EMA Admin User",
+            "match": {
+              "location": "ArchiveSteps.login()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1069952602,
+              "status": "passed"
+            },
+            "line": 46,
+            "name": "Click Archive Tab",
+            "match": {
+              "location": "ArchiveSteps.click_archive()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 98359809,
+              "status": "passed"
+            },
+            "line": 47,
+            "name": "Page Should Redirect to Archive Page",
+            "match": {
+              "location": "ArchiveSteps.archive_page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 802502184,
+              "status": "passed"
+            },
+            "line": 48,
+            "name": "Select from Year Dropdown",
+            "match": {
+              "location": "ArchiveSteps.select_year()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 202170016,
+              "status": "passed"
+            },
+            "line": 49,
+            "name": "Cycle Textbox should be enable/editable",
+            "match": {
+              "location": "ArchiveSteps.cycle_txtbox_enable()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2384698559,
+              "status": "passed"
+            },
+            "line": 50,
+            "name": "Exit Browser",
+            "match": {
+              "location": "ArchiveSteps.exit_browser()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 43,
+            "name": "@AR"
+          }
+        ]
+      }
+    ],
+    "name": "Archive Action",
+    "description": "",
+    "id": "archive-action",
+    "keyword": "Feature",
+    "uri": "Archive.feature"
+  }
+]
