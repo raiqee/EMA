@@ -262,4 +262,138 @@ public class ArchiveSteps extends Data{
 			throw new Exception("Test Condition Failed");
 		}
 	}
+	
+	@When("^Input Search Filters$")
+	public void input_search_filter() throws Throwable
+	{
+		new Select(driver.findElement(By.id("cboSearchBy"))).selectByVisibleText("Survey ID");
+	    driver.findElement(By.id("txtSearch")).clear();
+	    driver.findElement(By.id("txtSearch")).sendKeys("EMAN21075");
+	}
+	
+	@When("^Click Search Button$")
+	public void click_search_button() throws Throwable
+	{
+		driver.findElement(By.id("cmdSearch")).click();
+	}
+	
+	@Then("^Searched Survey should be displayed$")
+	public void searched_result() throws Throwable
+	{
+		List<WebElement> panel = driver.findElements(By.xpath("//*[@id='companyLink1']/td[3]/a"));
+		
+		for(WebElement wwa: panel)
+		{					
+			if(wwa.getText().equals("Waratah NZ Limited"))
+			{
+				sat = true;
+			}
+			else
+			{
+				driver.quit();
+				throw new Exception("Test Condition Failed") ;
+			}
+		}
+	}
+	
+	@Then("^Check Survey Table List$")
+	public void survey_table_list() throws Throwable
+	{
+		for(int i=0; i<4; i++)
+		{
+			if(i==0){
+				List<WebElement> panel = driver.findElements(By.xpath("//*[@id='companyLink2']/td[1]"));
+								
+					if(panel.size() != 0)
+					{
+						sat = true;
+					}
+					else
+					{
+						driver.quit();
+						throw new Exception("Test Condition Failed") ;
+					}
+			}else if(i==1){
+				List<WebElement> panel = driver.findElements(By.xpath("//*[@id='companyLink2']/td[2]"));
+				
+				if(panel.size() != 0)
+				{
+					sat = true;
+				}
+				else
+				{
+					driver.quit();
+					throw new Exception("Test Condition Failed") ;
+				}
+			}else if(i==2){
+				List<WebElement> panel = driver.findElements(By.xpath("//*[@id='companyLink2']/td[3]/a"));
+				
+				if(panel.size() != 0)
+				{
+					sat = true;
+				}
+				else
+				{
+					driver.quit();
+					throw new Exception("Test Condition Failed") ;
+				}
+			}else if(i==3){
+				List<WebElement> panel = driver.findElements(By.xpath("//*[@id='companyLink1']/td[4]/div/div[1]/a"));
+				
+				if(panel.size() != 0)
+				{
+					sat = true;
+				}
+				else
+				{
+					driver.quit();
+					throw new Exception("Test Condition Failed") ;
+				}
+			}
+		}
+	}
+	
+	@When("^Click Notes Link$")
+	public void click_notes() throws Throwable
+	{
+		driver.findElement(By.xpath("(//a[contains(text(),'Notes')])[2]")).click();
+	}
+	
+	@Then("^Note Modal will be displayed$")
+	public void notes_modal() throws Throwable
+	{
+		List<WebElement> panel = driver.findElements(By.xpath("//*[@id='comment763']"));
+		
+		if(panel.size() != 0)
+		{
+			sat = true;
+		}
+		else
+		{
+			driver.quit();
+			throw new Exception("Test Condition Failed") ;
+		}
+	}
+	
+	@When("^Click Close Icon$")
+	public void close_modal() throws Throwable
+	{
+		driver.findElement(By.cssSelector("a.modalCloseImg.simplemodal-close")).click();
+	}
+	
+	@Then("^Note Modal should be closed$")
+	public void note_modal_closed() throws Throwable
+	{
+		List<WebElement> panel = driver.findElements(By.xpath("//*[@id='comment763']"));
+		
+		if(panel.size() == 0)
+		{
+			sat = true;
+		}
+		else
+		{
+			driver.quit();
+			throw new Exception("Test Condition Failed") ;
+		}
+	}
 }
