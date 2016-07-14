@@ -1,0 +1,16 @@
+Java NullPointerException when adding new players
+
+Build 16.2-SNAPSHOT(09/06 04:03)revision 138130, apollo-master-1480
+
+Steps to Replicate
+1. Create New Event (Any Sport)
+2. Add Opponents
+3. Add Players under Opponents
+
+Reference : 
+
+ABP-49329
+Null Pointer Exception: When adding Players 
+
+VAN and ISBB
+
